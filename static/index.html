@@ -66,7 +66,7 @@ function drawCircle(context,entity) {
         fillStyle = entity['colour'];
         strokeStyle = fillStyle;
         arc(x, y, (entity["radius"])?entity["radius"]:50, 0, 2.0 * Math.PI, false);
-        stroke();                                
+        fill();
     }
 }
 
@@ -254,16 +254,17 @@ mouse = (function() {
 
 // Add the application specific mouse listeners!
 mouse.mousedowners.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'blue', 'fill': 'aquamarine'});
+    addEntityWithoutName({'x':x,'y':y,'colour':'blue', 'radius' : 50});
 });
 
 mouse.mouseuppers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'red', 'radius' : 100, 'fill': 'yellow'});
+    addEntityWithoutName({'x':x,'y':y,'colour':'red', 'radius' : 25});
 });
 
+
 mouse.mousedraggers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'green',
-                          'radius':10, 'fill': 'green'});
+    addEntityWithoutName({'x':x,'y':y,'colour': 'aquamarine',
+                          'radius':10});
 });
 
 
